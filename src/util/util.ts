@@ -18,14 +18,14 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
         responseType: 'arraybuffer'
       })
         .then(async function ({ data: imageBuffer }) {
-          const photo = await Jimp.read(imageBuffer);
+          const photo: any = await Jimp.read(imageBuffer);
           const outpath =
             "/tmp/filtered" + Math.floor(Math.random() * 2000) + ".jpg";
           await photo
             .resize(256, 256) // resize
             .quality(60) // set JPEG quality
             .greyscale() // set greyscale
-            .write(__dirname + outpath, (img) => {
+            .write(__dirname + outpath, () => {
               resolve(__dirname + outpath);
             });
         })

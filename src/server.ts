@@ -35,16 +35,18 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
   // Displays a simple message to the user
   app.get("/filteredimage", async (req, res) => {
     if (req.query.image_url) {
-      const image = req.query.image_url;
-      const filteredpath = await filterImageFromURL(image);
+      const image: string = req.query.image_url;
+      const filteredpath: string = await filterImageFromURL(image);
+      res.status(200);
       res.sendFile(filteredpath);
     } else {
-      res.send({ statusCode: 400 });
+      res.status(400);
+      res.send("Bad Request Received")
     }
   });
 
   app.delete("/deleteFile", async (req, res) => {
-    const image = req.query.image_url;
+    const image: string = req.query.image_url;
     const filteredpath = await deleteLocalFiles([image])
     res.send({ status: "ok" })
   });
