@@ -51,4 +51,6 @@ EndPoint Url -
 
 http://imageminakshi-env.eba-4d9yheac.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
 
+http://imageminakshi-env.eba-4d9yheac.us-east-1.elasticbeanstalk.com/filteredimage?image_url=
+
 Github Link-https://github.com/minakshiav/UdacityImageProcessing.git
